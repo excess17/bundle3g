@@ -1,0 +1,12 @@
+{
+    "systemParams": {
+        "api": {
+            "simple-node-api": {
+                "url": "http://localhost:8081"
+            },
+            "ms2ext-api": {
+                "url": "https://sim1.k8s-entando.org/bundle3b-551e53a5-986a1b71/simple-node-ms"
+            }
+        }
+    }
+}

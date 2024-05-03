@@ -1,0 +1,43 @@
+{
+    "microservices": [
+        {
+            "name": "ms",
+            "stack": "custom",
+            "healthCheckPath": "/health",
+            "commands": {
+                "run": "./docker-gs-ping",
+                "build": "echo 'no-op build'",
+                "pack": "docker build -t goserv ."
+            },            
+            "version":"0.0.1"
+
+        }
+    ],
+    "microfrontends": [
+        
+        {
+            "name": "simple-mfe",
+            "customElement": "simple-mfe",
+            "stack": "react",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "titles": {
+                "en": "Simple MFE with API Claim",
+                "it": "Simple MFE with API Claim"
+            },
+            "apiClaims": [
+                {
+                    "name": "simple-node-api",
+                    "type": "internal",
+                    "serviceName": "ms"
+                }
+            ]
+        }   
+    ],
+    "svc": [],
+    "name": "bundle3g",
+    "version": "0.0.1",
+    "description": "bundle3g description",
+    "type": "bundle"
+}
